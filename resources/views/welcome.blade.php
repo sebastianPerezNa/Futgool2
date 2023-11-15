@@ -149,15 +149,7 @@
         .section button:hover {
             background-color: #45a049;
         }
-        .content-container {
-            display: flex;
-            margin-top: 20px;
-            align-items: flex-start;
-            margin-left: 20px;
-            background: url('{{ asset('assets/uch.jpg') }}') no-repeat center center fixed;
-            background-size: cover;
-            flex: 1;
-        }
+
 
 
 
@@ -186,14 +178,20 @@
             margin-bottom: 10px;
         }
         .content-container {
+        background-image: url('assets/chi.jpg'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
+        background-size: cover; /* Ajusta según tus necesidades */
+        background-position: center; /* Ajusta según tus necesidades */
+        padding: 20px;
+        width: 100%;
+            }
+
+        .content-container {
             display: flex;
+            justify-content: space-around;
+            width: 100%;
             margin-top: 20px;
-            align-items: flex-start;
-            margin-left: 20px;
-            background: url('{{ asset('assets/uh.jpg') }}') no-repeat center center fixed;
-            background-size: cover;
-            flex: 1;
-        }
+            }
+
 
 
         .tournament-button {
@@ -234,7 +232,7 @@
             <!-- Sección 2 -->
             <div class="section">
                 <div class="section-title">Inscripción de Equipos</div>
-                <img src="{{ asset('assets/real.jpg') }}" alt="real.jpg" style="max-width: 100%; height: auto;">
+                <img src="{{ asset('assets/uch.jpg') }}" alt="real.jpg" style="max-width: 100%; height: auto;">
                 <p class="section-description">Inscribe a tu equipo para enfrentar a los mejores rivales</p>
                 <button>Inscripcion</button>
             </div>
