@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futgool Player</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -45,35 +46,65 @@
             width: 100%;
             padding: 20px;
             text-align: center;
-            font-family: Arial;
-            font-size: 30px;
+            font-family: "Bradley Hand", cursive; /* Añade la fuente Bradley Hand */
             color: #fff;
             background-color: rgba(0, 128, 0, 0.9);
             text-shadow: 0px 0px 9px #508AD3;
             z-index: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Alinea los elementos en el encabezado */
         }
+
+        .left-header {
+            font-size: 16px; /* Ajusta el tamaño del texto según tus necesidades */
+            margin-top: 10px; /* Ajusta el espacio entre el título y el subtítulo */
+        }
+
+        .center-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Alinea los elementos a lo largo del eje principal */
+        }
+
+        .center-header img {
+            max-height: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+            margin-left: 20px; /* Ajusta el espacio entre el logo y el título */
+        }
+
+
+
+
 
         .header img {
-            max-height: 40px;
-            margin-right: 10px;
+            max-height: 50px;
+            margin-right: 70px;
         }
 
-        /* Barra de Navegación */
-        nav {
+                /* Barra de Navegación */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
             background-color: #2ecc71;
-            padding: 10px 0;
             width: 100%;
             text-align: center;
             position: relative;
             z-index: 2;
         }
 
-        nav a {
-            color: #fff;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centra los elementos en el eje horizontal */
+            flex-grow: 1; /* Hace que este div ocupe todo el espacio disponible */
+        }
+
+        .nav-links a {
             text-decoration: none;
+            color: #fff;
             padding: 10px 20px;
             margin: 0 10px;
             font-size: 18px;
@@ -81,9 +112,52 @@
             transition: background-color 0.3s ease;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             background-color: #27ae60;
         }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .login-icon {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            padding: 8px; /* Ajusta según tus necesidades */
+            margin-right: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 8px; /* Ajusta según tus necesidades */
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .nav-links a,
+        .nav-icons a {
+            margin-right: 20px;
+        }
+
+        .nav-links a:hover,
+        .nav-icons a:hover {
+            text-decoration: underline;
+        }
+
 
         .section-container {
             background-color: #3498db; /* Cambia este color según tu diseño */
@@ -118,6 +192,24 @@
             height: auto;
             border-radius: 5px;
         }
+        .team-info {
+            display: flex;
+            align-items: center; /* Alinea verticalmente el contenido del contenedor */
+            background-color: #2ecc71; /* Fondo del contenedor */
+            padding: 5px; /* Ajusta según tus necesidades */
+            border-radius: 5px; /* Añade esquinas redondeadas si lo deseas */
+        }
+
+        .team-count {
+            color: #000; /* Letras negras */
+            font-size: 14px;
+            margin-right: 10px; /* Espaciado a la derecha del mensaje */
+        }
+
+        .tournament-button {
+            /* Puedes añadir estilos adicionales al botón si es necesario */
+        }
+
 
         .section-title {
             font-family: 'Arial', sans-serif;
@@ -128,6 +220,13 @@
             align-items: center;
             justify-content: center;
         }
+        .team-count {
+        display: block;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
 
         .section-description {
             font-family: 'Arial', sans-serif;
@@ -178,7 +277,7 @@
             margin-bottom: 10px;
         }
         .content-container {
-        background-image: url('assets/chi.jpg'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
+        background-image: url('assets/bal3.avif'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
         background-size: cover; /* Ajusta según tus necesidades */
         background-position: center; /* Ajusta según tus necesidades */
         padding: 20px;
@@ -206,15 +305,30 @@
 </head>
 
 <body>
-    <div id="animated-background"></div>
+<div id="animated-background"></div>
     <div class="header">
-        <img src="{{ asset('assets/logo.png') }}" alt="logo">
-        <h1>Futgool Player</h1>
+
+        <div class="center-header">
+            <h1>Futgool Player</h1>
+            <img src="{{ asset('assets/logo.png') }}" alt="logo">
+        </div>
+        <div class="center-header">
+            <p>"Únete a la nueva comunidad del fútbol"</p>
+        </div>
     </div>
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Acerca de</a>
-        <a href="#">Contacto</a>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Contacto</a>
+        </div>
+        <div class="nav-icons">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <a href="#" class="login-icon"><i class="fas fa-user"></i> Iniciar Sesión</a>
+        </div>
     </nav>
 
 
@@ -362,32 +476,64 @@
 
             <h2 style="color: #fff; background-color: #2ecc71;; margin-bottom: 10px; font-weight: bold; padding: 10px; border-radius: 5px;">Torneos Disponibles</h2>
 
+                <div class="tournament-item">
+                    <span>Copa Santiago Amateur</span>
+                    <div class="team-info">
+                        <span class="team-count">(0 equipos inscritos)</span>
+                        <button class="tournament-button">Inscripcion</button>
+                    </div>
+            </div>
+
+
             <div class="tournament-item">
                 <span>Copa Santiago Amateur</span>
-                <button class="tournament-button">Inscribirse</button>
-            </div>
-
-            <div class="tournament-item">
-                <span>Desafío Capitalino</span>
-                <button class="tournament-button">Inscripcion</button>
-            </div>
-            <div class="tournament-item">
-                <span>Desafío San Joaquin</span>
-                <button class="tournament-button">Inscripcion</button>
-            </div>
-            <div class="tournament-item">
-                <span>Copa Macul</span>
-                <button class="tournament-button">Inscripcion</button>
-            </div>
-            <div class="tournament-item">
-                <span>Barrio chileno</span>
-                <button class="tournament-button">Inscripcion</button>
-            </div>
-
-
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+          </div>
+          <div class="tournament-item">
+                <span>Copa Santiago Amateur</span>
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+          </div>
+          <div class="tournament-item">
+                <span>Copa Santiago Amateur</span>
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+          </div>
+          <div class="tournament-item">
+                <span>Copa Santiago Amateur</span>
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+          </div>
 
             </div>
 </div>
+<script>
+    // Ejemplo de script para contar equipos inscritos en cada torneo
+    document.addEventListener('DOMContentLoaded', function () {
+        // Asigna a cada botón de inscripción una función para incrementar el contador
+        var buttons = document.querySelectorAll('.tournament-button');
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                // Encuentra el contenedor del torneo y su contador asociado
+                var tournamentContainer = button.closest('.tournament-item');
+                var teamCountElement = tournamentContainer.querySelector('.team-count');
+
+                // Incrementa el contador y actualiza el texto
+                var currentCount = parseInt(teamCountElement.textContent, 10);
+                teamCountElement.textContent = (currentCount + 1) + ' equipos inscritos';
+            });
+        });
+    });
+</script>
 
 </body>
 
