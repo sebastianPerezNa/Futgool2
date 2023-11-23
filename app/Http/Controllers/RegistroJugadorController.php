@@ -18,13 +18,19 @@ class RegistroJugadorController extends Controller
         ]);
 
         // Crear un nuevo registro en la base de datos
-        RegistroJugador::create([
+        $jugador = RegistroJugador::create([
             'nombre' => $request->input('nombre'),
             'apellido' => $request->input('apellido'),
             'posicion' => $request->input('posicion'),
             'edad' => $request->input('edad'),
         ]);
 
-        return redirect()->back()->with('success', 'Registro exitoso');
+        if ($jugador) {
+            // Registro exitoso
+            return redirect()->back()->with('success', 'Registro exitoso. ¡Bienvenido!');
+        } else {
+            // Error en el registro
+            return redirect()->back()->with('error', 'Error al registrar. Inténtelo de nuevo.');
+        }
     }
 }

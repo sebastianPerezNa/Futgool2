@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futgool Player</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -46,7 +47,7 @@
             width: 100%;
             padding: 20px;
             text-align: center;
-            font-family: "Bradley Hand", cursive; /* Añade la fuente Bradley Hand */
+            font-family: "Bradley Hand", cursive;
             color: #fff;
             background-color: rgba(0, 128, 0, 0.9);
             text-shadow: 0px 0px 9px #508AD3;
@@ -54,35 +55,30 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Alinea los elementos en el encabezado */
+            justify-content: center;
         }
 
         .left-header {
-            font-size: 16px; /* Ajusta el tamaño del texto según tus necesidades */
-            margin-top: 10px; /* Ajusta el espacio entre el título y el subtítulo */
+            font-size: 16px;
+            margin-top: 10px;
         }
 
         .center-header {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Alinea los elementos a lo largo del eje principal */
+            justify-content: space-between;
         }
 
         .center-header img {
-            max-height: 50px; /* Ajusta el tamaño del logo según tus necesidades */
-            margin-left: 20px; /* Ajusta el espacio entre el logo y el título */
+            max-height: 50px;
+            margin-left: 20px;
         }
-
-
-
-
 
         .header img {
             max-height: 50px;
             margin-right: 70px;
         }
 
-                /* Barra de Navegación */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -98,8 +94,8 @@
         .nav-links {
             display: flex;
             align-items: center;
-            justify-content: center; /* Centra los elementos en el eje horizontal */
-            flex-grow: 1; /* Hace que este div ocupe todo el espacio disponible */
+            justify-content: center;
+            flex-grow: 1;
         }
 
         .nav-links a {
@@ -133,14 +129,14 @@
         }
 
         input {
-            padding: 8px; /* Ajusta según tus necesidades */
+            padding: 8px;
             margin-right: 5px;
             border: none;
             border-radius: 3px;
         }
 
         button {
-            padding: 8px; /* Ajusta según tus necesidades */
+            padding: 8px;
             background-color: #3498db;
             color: #fff;
             border: none;
@@ -158,9 +154,8 @@
             text-decoration: underline;
         }
 
-
         .section-container {
-            background-color: #3498db; /* Cambia este color según tu diseño */
+            background-color: #3498db;
             padding: 20px;
             width: 100%;
         }
@@ -192,24 +187,29 @@
             height: auto;
             border-radius: 5px;
         }
+
         .team-info {
             display: flex;
-            align-items: center; /* Alinea verticalmente el contenido del contenedor */
-            background-color: #2ecc71; /* Fondo del contenedor */
-            padding: 5px; /* Ajusta según tus necesidades */
-            border-radius: 5px; /* Añade esquinas redondeadas si lo deseas */
+            align-items: center;
+            background-color: #2ecc71;
+            padding: 5px;
+            border-radius: 5px;
         }
 
         .team-count {
-            color: #000; /* Letras negras */
+            color: #000;
             font-size: 14px;
-            margin-right: 10px; /* Espaciado a la derecha del mensaje */
+            margin-right: 10px;
         }
 
         .tournament-button {
-            /* Puedes añadir estilos adicionales al botón si es necesario */
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
-
 
         .section-title {
             font-family: 'Arial', sans-serif;
@@ -220,13 +220,13 @@
             align-items: center;
             justify-content: center;
         }
-        .team-count {
-        display: block;
-        color: #fff;
-        font-size: 14px;
-        margin-top: 5px;
-    }
 
+        .team-count {
+            display: block;
+            color: #fff;
+            font-size: 14px;
+            margin-top: 5px;
+        }
 
         .section-description {
             font-family: 'Arial', sans-serif;
@@ -249,26 +249,21 @@
             background-color: #45a049;
         }
 
-
-
-
-
-            .table-container {
-        /* Elimina el fondo aquí */
+        .table-container {
         margin-top: 20px;
-        margin-left: 20px;
         border-radius: 10px;
         padding: 20px;
+        width: calc(50% - 20px); /* Ajusta el valor según sea necesario */
     }
 
-    .tournament-list {
-        /* Elimina el fondo aquí */
-        border: 2px solid #3498db;
-        border-radius: 10px;
-        padding: 10px;
-        background-color: #ecf0f1;
-    }
 
+        .tournament-list {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            flex: 1; /* Añadido para ocupar el espacio disponible */
+        }
 
 
         .tournament-item {
@@ -276,20 +271,17 @@
             justify-content: space-between;
             margin-bottom: 10px;
         }
-        .content-container {
-        background-image: url('assets/bal3.avif'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
-        background-size: cover; /* Ajusta según tus necesidades */
-        background-position: center; /* Ajusta según tus necesidades */
-        padding: 20px;
-        width: 100%;
-            }
 
         .content-container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            margin-top: 20px;
-            }
+        background-image: url('assets/bal3.avif');
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around; /* Ajustado para centrar horizontalmente */
+        align-items: center;
+    }
 
 
 
@@ -301,10 +293,31 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .slider-container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        overflow-x: scroll
+
+        /* Vamos a añadir esto 👇 */
+        scroll-snap-type: x mandatory;
+        }
+
+        .slider-container img {
+        flex: 0 0 100%;
+        width: 100%;
+        object-fit: cover;
+
+        /* Vamos a añadir esto 👇 */
+        scroll-snap-align: center;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Mensajes Flash -->
+
+
 <div id="animated-background"></div>
     <div class="header">
 
@@ -330,6 +343,7 @@
             <a href="#" class="login-icon"><i class="fas fa-user"></i> Iniciar Sesión</a>
         </div>
     </nav>
+
 
 
     <!-- Secciones -->
@@ -360,58 +374,76 @@
             </div>
         </div>
     </div>
-    <!-- Modal de Registro -->
-    <div class="modal fade" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="registroModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registroModalLabel">Formulario de Registro</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<!-- Modal de Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registroModalLabel">Formulario de Registro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-success alert-dismissible fade" role="alert" id="registroExitoso" style="display:none; background-color: blue;">
+                    Registro exitoso. ¡Bienvenido!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="alert alert-success alert-dismissible fade" role="alert" id="registroExitoso"
-                        style="display:none;">
-                        Registro exitoso
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                <form action="{{ route('registro.store') }}" method="post" id="registroForm">
+                    @csrf
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
                     </div>
-                    <form action="{{ route('registro.store') }}" method="post" id="registroForm">
-                        @csrf
-                        <div class="form-group">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre"
-                                placeholder="Ingrese su nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="apellido">Apellido:</label>
-                            <input type="text" class="form-control" name="apellido" id="apellido"
-                                placeholder="Ingrese su apellido">
-                        </div>
-                        <div class="form-group">
-                            <label for="posicion">Posición:</label>
-                            <input type="text" class="form-control" name="posicion" id="posicion"
-                                placeholder="Ingrese su posición">
-                        </div>
-                        <div class="form-group">
-                            <label for="edad">Edad:</label>
-                            <input type="number" class="form-control" name="edad" id="edad"
-                                placeholder="Ingrese su edad">
-                        </div>
-                        <button type="button" class="btn btn-primary" id="btnRegistrarse">Registrarse</button>
-                    </form>
-                </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingrese su apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="posicion">Posición:</label>
+                        <input type="text" class="form-control" name="posicion" id="posicion" placeholder="Ingrese su posición" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" class="form-control" name="edad" id="edad" placeholder="Ingrese su edad" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btnRegistrarse">Registrarse</button>
+                </form>
             </div>
         </div>
     </div>
-<div class="content-container">
-   <div style="display: flex; margin-top: 20px; align-items: flex-start; margin-left: 20px;">
-    <div style="flex: 1;">
-        <h2 style="color: #fff; background-color: #2ecc71; margin-bottom: 10px; font-weight: bold; padding: 10px; border-radius: 5px;margin-left: -220px;">Tabla de Posiciones Torneo SJ</h2>
-        <table class="table table-striped" style="background-color: #ecf0f1; border-radius: 10px; margin-left: -220px;">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var registroForm = document.getElementById('registroForm');
+        var registroExitoso = document.getElementById('registroExitoso');
+
+        registroForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Aquí podrías agregar lógica adicional si es necesario antes de enviar el formulario
+
+            // Simular el registro exitoso
+            registroExitoso.style.display = 'block';
+
+            // Aquí podrías hacer una llamada AJAX para enviar los datos al servidor y guardarlos en la base de datos
+
+            // O puedes redirigir al usuario a otra página después del registro
+            // window.location.href = '/pagina-de-bienvenida';
+        });
+    });
+</script>
+
+
+    <div class="content-container">
+        <div class="table-container">
+            <h2 style="color: #fff; background-color: #2ecc71; margin-bottom: 10px; font-weight: bold; padding: 10px; border-radius: 5px;">Tabla de Posiciones Torneo SJ</h2>
+            <table class="table table-striped" style="background-color: #ecf0f1; border-radius: 10px;">
+                    <!-- Contenido de la tabla de posiciones... -->
+                <!-- Contenido de la tabla de posiciones... -->
                 <thead>
                     <tr>
                         <th>Nombre de equipo</th>
@@ -465,25 +497,15 @@
                         <td>22</td>
                         <td>12</td>
                     </tr>
-
                     <!-- Fin de datos de ejemplo -->
                 </tbody>
             </table>
         </div>
 
-                <!-- Lista de Torneos a la derecha de la tabla de posiciones -->
-            <div class="tournament-list" style="margin-left: 220px;">
+        <!-- Lista de Torneos a la derecha de la tabla de posiciones -->
+        <div class="tournament-list" >
 
             <h2 style="color: #fff; background-color: #2ecc71;; margin-bottom: 10px; font-weight: bold; padding: 10px; border-radius: 5px;">Torneos Disponibles</h2>
-
-                <div class="tournament-item">
-                    <span>Copa Santiago Amateur</span>
-                    <div class="team-info">
-                        <span class="team-count">(0 equipos inscritos)</span>
-                        <button class="tournament-button">Inscripcion</button>
-                    </div>
-            </div>
-
 
             <div class="tournament-item">
                 <span>Copa Santiago Amateur</span>
@@ -491,49 +513,94 @@
                     <span class="team-count">(0 equipos inscritos)</span>
                     <button class="tournament-button">Inscripcion</button>
                 </div>
-          </div>
-          <div class="tournament-item">
-                <span>Copa Santiago Amateur</span>
-                <div class="team-info">
-                    <span class="team-count">(0 equipos inscritos)</span>
-                    <button class="tournament-button">Inscripcion</button>
-                </div>
-          </div>
-          <div class="tournament-item">
-                <span>Copa Santiago Amateur</span>
-                <div class="team-info">
-                    <span class="team-count">(0 equipos inscritos)</span>
-                    <button class="tournament-button">Inscripcion</button>
-                </div>
-          </div>
-          <div class="tournament-item">
-                <span>Copa Santiago Amateur</span>
-                <div class="team-info">
-                    <span class="team-count">(0 equipos inscritos)</span>
-                    <button class="tournament-button">Inscripcion</button>
-                </div>
-          </div>
-
             </div>
-</div>
-<script>
-    // Ejemplo de script para contar equipos inscritos en cada torneo
-    document.addEventListener('DOMContentLoaded', function () {
-        // Asigna a cada botón de inscripción una función para incrementar el contador
-        var buttons = document.querySelectorAll('.tournament-button');
-        buttons.forEach(function (button) {
-            button.addEventListener('click', function () {
-                // Encuentra el contenedor del torneo y su contador asociado
-                var tournamentContainer = button.closest('.tournament-item');
-                var teamCountElement = tournamentContainer.querySelector('.team-count');
 
-                // Incrementa el contador y actualiza el texto
-                var currentCount = parseInt(teamCountElement.textContent, 10);
-                teamCountElement.textContent = (currentCount + 1) + ' equipos inscritos';
+            <div class="tournament-item">
+                <span>Copa Santiago Amateur</span>
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+            </div>
+            <div class="tournament-item">
+                <span>Copa Santiago Amateur</span>
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+            </div>
+            <div class="tournament-item">
+                <span>Copa Santiago Amateur</span>
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+            </div>
+            <div class="tournament-item">
+                <span>Copa Santiago Amateur</span>
+                <div class="team-info">
+                    <span class="team-count">(0 equipos inscritos)</span>
+                    <button class="tournament-button">Inscripcion</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+     <!-- Carrusel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="max-width: 800px; margin: 0 auto;">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ asset('assets/bar.jpg') }}" class="d-block w-100" alt="Slide 1">
+        </div>
+
+            <div class="carousel-item">
+            <img src="{{ asset('assets/inis.jpg') }}" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+            <img src="{{ asset('assets/fuf.jpg') }}" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <script>
+        // Ejemplo de script para contar equipos inscritos en cada torneo
+        document.addEventListener('DOMContentLoaded', function () {
+            // Asigna a cada botón de inscripción una función para incrementar el contador
+            var buttons = document.querySelectorAll('.tournament-button');
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Encuentra el contenedor del torneo y su contador asociado
+                    var tournamentContainer = button.closest('.tournament-item');
+                    var teamCountElement = tournamentContainer.querySelector('.team-count');
+
+                    // Incrementa el contador y actualiza el texto
+                    var currentCount = parseInt(teamCountElement.textContent, 10);
+                    teamCountElement.textContent = (currentCount + 1) + ' equipos inscritos';
+                });
             });
         });
-    });
-</script>
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+
 
 </body>
 
