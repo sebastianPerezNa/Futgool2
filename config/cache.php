@@ -15,6 +15,8 @@ return [
     |
     */
 
+    'path' => env('CACHE_PATH', storage_path('framework/cache')),
+
     'default' => env('CACHE_DRIVER', 'file'),
 
     /*

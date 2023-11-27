@@ -381,7 +381,7 @@
 
         <div class="center-header">
             <h1>Futgool Player</h1>
-            <img src="{{ asset('assets/logo.png') }}" alt="logo">
+            <img src="<?php echo e(asset('assets/logo.png')); ?>" alt="logo">
         </div>
         <div class="center-header">
             <p>"Únete a la nueva comunidad del fútbol"</p>
@@ -410,25 +410,25 @@
             <!-- Sección 1 -->
             <div class="section">
                 <div class="section-title">Inscripción de Jugadores</div>
-                <img src="{{ asset('assets/ron2.jpg') }}" alt="ron2.jpg">
+                <img src="<?php echo e(asset('assets/ron2.jpg')); ?>" alt="ron2.jpg">
                 <p class="section-description">Inscríbete como jugador para unirte a clubes o revisar tus estadísticas</p>
-                <a href="{{ route('registrojugador') }}" class="btn btn-primary">Registro de Jugadores</a>
+                <a href="<?php echo e(route('registrojugador')); ?>" class="btn btn-primary">Registro de Jugadores</a>
             </div>
 
           <!-- Sección 2 -->
         <div class="section">
             <div class="section-title">Inscripción de Equipos</div>
-            <img src="{{ asset('assets/uch.jpg') }}" alt="real.jpg" style="max-width: 100%; height: auto;">
+            <img src="<?php echo e(asset('assets/uch.jpg')); ?>" alt="real.jpg" style="max-width: 100%; height: auto;">
             <p class="section-description">Inscribe a tu equipo para enfrentar a los mejores rivales</p>
 
             <!-- Agrega el atributo onclick para redirigir al usuario -->
-            <a href="{{ route('registro_equipos') }}" class="btn btn-primary">Registro de Equipos</a>
+            <a href="<?php echo e(route('registro_equipos')); ?>" class="btn btn-primary">Registro de Equipos</a>
         </div>
 
             <!-- Nueva Sección -->
             <div class="section">
                 <div class="section-title">Revisión de Estadísticas</div>
-                <img src="{{ asset('assets/naz1.jpg') }}" alt="naz1.jpg">
+                <img src="<?php echo e(asset('assets/naz1.jpg')); ?>" alt="naz1.jpg">
                 <p class="section-description">Revisa tus estadísticas</p>
                 <button>Estadísticas</button>
             </div>
@@ -440,7 +440,7 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <img class="img-fluid mb-4 mb-lg-0" src="{{ asset('assets/logo.png') }}" alt="real.jpg">
+                <img class="img-fluid mb-4 mb-lg-0" src="<?php echo e(asset('assets/logo.png')); ?>" alt="real.jpg">
             </div>
             <div class="col-lg-6">
                 <h2 class="display-4 font-weight-bold mb-4">Nueva comunidad de futbol</h2>
@@ -583,13 +583,13 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 100%; background-color: #3498db; padding: 20px;">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('assets/bar.jpg') }}" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Slide 1">
+            <img src="<?php echo e(asset('assets/bar.jpg')); ?>" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Slide 1">
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('assets/inis.jpg') }}" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Slide 2">
+            <img src="<?php echo e(asset('assets/inis.jpg')); ?>" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Slide 2">
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('assets/fuf.jpg') }}" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Slide 3">
+            <img src="<?php echo e(asset('assets/fuf.jpg')); ?>" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Slide 3">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -636,3 +636,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\laragon\www\Futgool2\resources\views/welcome.blade.php ENDPATH**/ ?>
