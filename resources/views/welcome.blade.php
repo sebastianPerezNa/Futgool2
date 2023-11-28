@@ -366,6 +366,45 @@
     padding: 20px; /* Ajusta según sea necesario */
     width: 100%; /* Cubrirá el ancho de la página */
 }
+/* Estilos para el formulario emergente */
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 300px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.success-message {
+            display: none;
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+
 
 
 
@@ -373,7 +412,7 @@
 </head>
 
 <body>
-    <!-- Mensajes Flash -->
+
 
 
 <div id="animated-background"></div>
@@ -394,11 +433,11 @@
             <a href="#">Contacto</a>
         </div>
         <div class="nav-icons">
-            <div class="search-box">
-                <input type="text" placeholder="Buscar">
-                <button><i class="fas fa-search"></i></button>
-            </div>
-            <a href="#" class="login-icon"><i class="fas fa-user"></i> Iniciar Sesión</a>
+        <a href="{{ route('registrousuario') }}" class="register-icon">
+            <i class="fas fa-clipboard"></i> Registro
+        </a>
+
+            <a href="#" class="login-icon"><i class="fas fa-user"></i> Inicio de Sesión</a>
         </div>
     </nav>
 
@@ -412,7 +451,7 @@
                 <div class="section-title">Inscripción de Jugadores</div>
                 <img src="{{ asset('assets/ron2.jpg') }}" alt="ron2.jpg">
                 <p class="section-description">Inscríbete como jugador para unirte a clubes o revisar tus estadísticas</p>
-                <a href="{{ route('registrojugador') }}" class="btn btn-primary">Registro de Jugadores</a>
+                <a href="{{ route('registrojugador') }}" class="btn btn-primary">Registro de Jugador</a>
             </div>
 
           <!-- Sección 2 -->
@@ -422,15 +461,14 @@
             <p class="section-description">Inscribe a tu equipo para enfrentar a los mejores rivales</p>
 
             <!-- Agrega el atributo onclick para redirigir al usuario -->
-            <a href="{{ route('registro_equipos') }}" class="btn btn-primary">Registro de Equipos</a>
-        </div>
+            <a href="{{ route('registroequipos') }}" class="btn btn-primary">Registro de Equipo</a>        </div>
 
             <!-- Nueva Sección -->
             <div class="section">
-                <div class="section-title">Revisión de Estadísticas</div>
+                <div class="section-title">Partido Amistoso</div>
                 <img src="{{ asset('assets/naz1.jpg') }}" alt="naz1.jpg">
-                <p class="section-description">Revisa tus estadísticas</p>
-                <button>Estadísticas</button>
+                <p class="section-description">Enfrentate a cualquier rival</p>
+                <a href="{{ route('amistoso') }}" class="btn btn-primary">Crear Partido</a>
             </div>
         </div>
     </div>
@@ -528,7 +566,7 @@
                         <td>22</td>
                         <td>12</td>
                     </tr>
-                    <!-- Fin de datos de ejemplo -->
+
                 </tbody>
             </table>
         </div>
@@ -579,8 +617,36 @@
     </div>
 </div>
 
+<!-- Formulario emergente -->
+<div id="modal-container" class="modal-container">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Formulario de Inscripción</h2>
+        <form id="inscriptionForm" onsubmit="submitForm('Copa Santiago Amateur')">
+            <label for="teamName">Nombre de equipo:</label>
+            <input type="text" id="teamName" name="teamName" required>
+
+            <label for="captain">Capitán:</label>
+            <input type="text" id="captain" name="captain" required>
+
+            <label for="logo">Escudo:</label>
+            <input type="file" id="logo" name="logo" accept="image/*">
+
+            <button type="submit">Inscribir Equipo</button>
+        </form>
+    </div>
+</div>
+
+<!-- Mensaje de registro exitoso -->
+<div id="successMessage" class="success-message">
+    Registro exitoso
+</div>
+
+
 <!-- Carrusel -->
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 100%; background-color: #3498db; padding: 20px;">
+<div class="section-title">Galeria</div>
+
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="{{ asset('assets/bar.jpg') }}" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Slide 1">
@@ -605,24 +671,54 @@
 
 
 
-    <script>
-        // Ejemplo de script para contar equipos inscritos en cada torneo
-        document.addEventListener('DOMContentLoaded', function () {
-            // Asigna a cada botón de inscripción una función para incrementar el contador
-            var buttons = document.querySelectorAll('.tournament-button');
-            buttons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    // Encuentra el contenedor del torneo y su contador asociado
-                    var tournamentContainer = button.closest('.tournament-item');
-                    var teamCountElement = tournamentContainer.querySelector('.team-count');
 
-                    // Incrementa el contador y actualiza el texto
-                    var currentCount = parseInt(teamCountElement.textContent, 10);
-                    teamCountElement.textContent = (currentCount + 1) + ' equipos inscritos';
-                });
-            });
-        });
-    </script>
+<script>
+    function openModal(tournamentName) {
+        document.getElementById('modal-container').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('modal-container').style.display = 'none';
+    }
+
+    function submitForm(tournamentName) {
+        // Aquí puedes agregar la lógica para enviar el formulario (por ejemplo, usando AJAX)
+
+        // Después de enviar el formulario, cierra el modal y muestra el mensaje de éxito
+        closeModal();
+        showSuccessMessage();
+
+        // Actualiza el contador del torneo
+        updateTeamCount(tournamentName);
+
+        // También puedes agregar lógica adicional aquí, por ejemplo, mostrar un mensaje de éxito.
+        // alert('Formulario enviado con éxito');
+    }
+
+    function showSuccessMessage() {
+        var successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
+
+        // Oculta el mensaje después de unos segundos (por ejemplo, 3 segundos)
+        setTimeout(function () {
+            successMessage.style.display = 'none';
+        }, 3000);
+    }
+
+    function updateTeamCount(tournamentName) {
+        var tournamentItem = document.querySelector(`.tournament-item span:contains(${tournamentName})`);
+        var teamCountElement = tournamentItem.closest('.tournament-item').querySelector('.team-count');
+
+        // Incrementa el contador y actualiza el texto
+        var currentCount = parseInt(teamCountElement.textContent, 10);
+        teamCountElement.textContent = (currentCount + 1) + ' equipos inscritos';
+    }
+
+    // Función de selección personalizada para encontrar el elemento que contiene un texto específico
+    jQuery.expr[':'].contains = function (a, i, m) {
+        return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+    };
+</script>
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Equipos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
     body {
         margin: 0;
@@ -81,14 +83,46 @@ button {
     align-items: center;
     margin-bottom: 8px;
 }
+header {
+      background-color: #3498db;
+      padding: 10px;
+      color: #fff;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    #backButton {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
     </style>
+
 </head>
+
+    <!-- Cambia el botón por un enlace -->
+    <a id="backButton" href="<?php echo e(url('/')); ?>">
+      <i class="fas fa-arrow-left"></i>
+      Volver a la página principal
+    </a>
 
 <body>
 <form id="registroEquiposForm" action="<?php echo e(route('registro_equipos.store')); ?>" method="post">
     <?php echo csrf_field(); ?>
     <h1>Registro de Equipos</h1>
+
 
     <label for="nombre_equipo">Nombre de equipo:</label>
     <input type="text" id="nombre_equipo" name="nombre_equipo" required>
